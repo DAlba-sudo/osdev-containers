@@ -1,5 +1,5 @@
 #!/bin/sh
-
+echo "Making our compiler for: $TARGET"
 cd /osdev/src/
 mkdir binutils
 mkdir gcc

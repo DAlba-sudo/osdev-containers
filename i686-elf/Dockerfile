@@ -6,7 +6,6 @@ RUN apt-get upgrade -y
 
 # install compilation related items
 RUN apt-get install -y build-essential bison flex texinfo libgmp3-dev libmpc-dev
-RUN apt-get install -y grub-common xorriso qemu-system grub-pc-bin
 
 # development related items
 RUN apt-get install -y git curl zsh vim
@@ -26,5 +25,5 @@ ENV TARGET=i686-elf
 ENV PREFIX="/osdev/src/cross"
 ENV PATH="$PREFIX/bin:$PATH"
 
-CP build-script.sh ./
-CMD build-script.sh
+COPY build-script.sh ./
+CMD /bin/bash
